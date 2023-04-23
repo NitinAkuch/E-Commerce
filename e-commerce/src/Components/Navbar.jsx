@@ -46,7 +46,7 @@ const Right = styled.div`
 const MenuItems = styled.div`
   font-size: 14px;
   cursor: pointer;
-  margin: 0px 15px;
+  margin: 0px 10px;
 `;
 
 const Navbar = () => {
@@ -57,15 +57,15 @@ const Navbar = () => {
           <Language>EN</Language>
           <SearchContainer>
             <Input />
-            <Search />
+            <Search style={{ color: "gray", fontSize: 16 }} />
           </SearchContainer>
         </Left>
         <Center>
-          <Angello>Angello</Angello>
+          <Angello>Angello.</Angello>
         </Center>
         <Right>
-          <MenuItems>Register</MenuItems>
-          <MenuItems>Sign-in</MenuItems>
+          <MenuItems>REGISTER</MenuItems>
+          <MenuItems>SIGN-IN</MenuItems>
           <MenuItems>
             <Badge badgeContent={4} color="primary">
               <ShoppingCartOutlined />
