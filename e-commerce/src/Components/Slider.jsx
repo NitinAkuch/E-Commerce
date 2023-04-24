@@ -59,6 +59,7 @@ const Title = styled.h1`
   padding: 10px;
 `;
 const Desc = styled.p`
+  font-size: 25px;
   padding: 10px;
   font-weight: 600;
   letter-spacing: 1.5px;

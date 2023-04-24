@@ -2,12 +2,13 @@ import React from "react";
 import styled from "styled-components";
 const OfferAnnounce = styled.div`
   background-color: #cde7f7;
-  height: 15px;
-  font-size: 12px;
-
+  height: 45px;
+  font-size: 22px;
+  letter-spacing: 1px;
   font-weight: bold;
   display: flex;
   justify-content: center;
+  align-items: center;
 `;
 const Announcement = () => {
   return (
