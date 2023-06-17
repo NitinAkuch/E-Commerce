@@ -1,5 +1,5 @@
 const User = require("../models/User");
-const { verifyToken, verifyTokenandAuthorization } = require("./verifyToken");
+const { verifyToken, verifyTokenandAuthorization, verifyTokenandAdmin } = require("./verifyToken");
 
 const router = require("express").Router();
 
@@ -17,6 +17,66 @@ router.put("/:id", verifyTokenandAuthorization, async (req, resp)=>{
         resp.status(500).json(err);
      }
 })
+
+//DELETE
+   router.delete("/:id", verifyTokenandAuthorization ,async (req, resp)=>{
+      try {
+         await User.findByIdAndDelete(req.params.id);
+         resp.status(200).json("User has been deleted.");
+      } catch (error) {
+         resp.status(500).json(error);
+      }
+      
+   })
+
+
+
+//GET USER by Id
+router.get("/find/:id", verifyTokenandAdmin, async(req, resp)=>{
+   try {
+      const user = await User.findById(req.params.id);
+      const {password, ...others} = user._doc;
+      resp.status(200).json(others);
+   } catch (error) {
+      resp.status(500).json(error)
+   }
+})
+
+//GET ALL USERS
+
+router.get("/", verifyTokenandAdmin, async (req, resp)=>{
+   try {
+      const query  = req.query.new;
+   const users = query ? await User.find().sort({_id:-1}).limit(3):await User.find();
+   resp.status(200).json(users);
+   } catch (error) {
+      resp.status(500).json(error);
+   }
+})
+
+// GET USER STATS
+
+router.get("/stats", verifyTokenandAdmin, async (req, resp)=>{
+   const date = new Date();
+   const lastYear = new Date(date.setFullYear(date.getFullYear()-1));
+   console.log("Last Year: "+lastYear);
+   try {
+      const data = await User.aggregate([
+         {$match: { createdAt: { $gte: lastYear}}},
+         {$project: { month: { $month: "$createdAt"}}},
+         { $group: {_id: "$month", total: {$sum: 1}}}
+      ])
+
+      resp.status(200).json(data);
+   } catch (error) {
+      resp.status(500).json(error);
+   }
+})
+
+
+
+
+
 
 // router.put("/:id", (req, resp)=>{
 //    console.log("Put method called.!" );

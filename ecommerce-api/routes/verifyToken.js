@@ -31,6 +31,17 @@ const verifyTokenandAuthorization = (req, resp, next)=>{
     })
 }
 
-module.exports = { verifyToken , verifyTokenandAuthorization}
+
+const verifyTokenandAdmin= (req, resp, next)=>{
+    console.log("VerifyTokenandAdmin is called.!");
+    verifyToken(req, resp, ()=>{
+        if(req.user.isAdmin){
+            next();
+        } else {
+            resp.status(403).json("You are not allowed to that.! Contact to Nitin.");
+        }
+    })
+}
+module.exports = { verifyTokenandAdmin, verifyToken , verifyTokenandAuthorization}
 
 
