@@ -31,6 +31,9 @@ router.put("/:id", verifyTokenandAuthorization, async (req, resp)=>{
 
 
 
+
+
+
 //GET USER by Id
 router.get("/find/:id", verifyTokenandAdmin, async(req, resp)=>{
    try {
