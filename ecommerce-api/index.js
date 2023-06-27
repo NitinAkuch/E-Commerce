@@ -5,9 +5,12 @@ const dotenv = require("dotenv");
 const userRoute = require("./routes/user")
 const authRoute = require("./routes/auth")
 const cartRoute = require("./routes/cart")
+const productRoute = require("./routes/product")
+const orderRoute = require("./models/Order")
+var cors = require("cors")
 dotenv.config();
 
-
+app.use(cors());
 
 mongoose.connect(process.env.MONGO_URL).then(()=>{
     console.log("DB (NitinDB) Connection Successfull.!")
@@ -19,6 +22,8 @@ app.use(express.json());
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/cart", cartRoute);
+app.use("api/order", orderRoute);
+app.use("api/product", productRoute);
 
 
 

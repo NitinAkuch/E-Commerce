@@ -4,6 +4,11 @@ import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 import { mobile } from "../responsive";
 import { Add, Remove } from "@mui/icons-material";
+import { useSelector } from "react-redux";
+import StripeCheckout from "react-stripe-checkout";
+import { useEffect, useState } from "react";
+import { userRequest } from "../requestMethods";
+import { useHistory } from "react-router";
 
 const Container = styled.div``;
 
@@ -153,6 +158,28 @@ const Button = styled.button`
 `;
 
 const Cart = () => {
+  const cart = useSelector((state) => state.cart);
+  const [stripeToken, setStripeToken] = useState(null);
+  const history = useHistory();
+
+  const onToken = (token) => {
+    setStripeToken(token);
+  };
+
+  useEffect(() => {
+    const makeRequest = async () => {
+      try {
+        const res = await userRequest.post("/checkout/payment", {
+          tokenId: stripeToken.id,
+          amount: 500,
+        });
+        history.push("/success", {
+          stripeData: res.data,
+          products: cart, });
+      } catch {}
+    };
+    stripeToken && makeRequest();
+  }, [stripeToken, cart.total, history]);
   return (
     <Container>
       <Navbar />
