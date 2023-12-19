@@ -37,18 +37,21 @@ const Button = styled.button`
   font-weight: 500;
   cursor: pointer;
   &:hover {
-    background-color: #88f772;
+    background-color: #50f62f;
+    color: white;
+    width: 100px;
+    height: 40px;
   }
 `;
 const CategoryItem = ({ item }) => {
   return (
     <Container>
       <Link to={`products/${item.cat}`}>
-      <Image src={item.img} />
-      <Info>
-        <Title>{item.title}</Title>
-        <Button>Shop Now!</Button>
-      </Info>
+        <Image src={item.img} />
+        <Info>
+          <Title>{item.title}</Title>
+          <Button>Shop Now!</Button>
+        </Info>
       </Link>
     </Container>
   );

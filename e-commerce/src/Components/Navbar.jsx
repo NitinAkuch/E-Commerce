@@ -29,12 +29,16 @@ const Language = styled.span`
 `;
 const SearchContainer = styled.div`
   border: 1px solid lightgrey;
+  height: 25px;
   display: flex;
   align-items: center;
   margin-left: 20px;
 `;
 const Input = styled.input`
   border: none;
+  &:focus {
+    outline: none;
+  }
   ${mobile({ width: "50px" })}
 `;
 const Center = styled.div`
@@ -63,7 +67,7 @@ const MenuItems = styled.div`
 const Navbar = () => {
   //const cart = useSelector(state=>state.cart.quantity)
   //console.log(cart)
-  const quantity = useSelector(state=>state.cart.quantity)
+  const quantity = useSelector((state) => state.cart.quantity);
   return (
     <Container>
       <Wrapper>
@@ -71,7 +75,8 @@ const Navbar = () => {
           <Language>EN</Language>
           <SearchContainer>
             <Input />
-            <Search style={{ color: "gray", fontSize: 16 }} />
+            <Search style={{ fontSize: 18 }} />
+            {/* style={{ color: "gray", fontSize: 16 }} */}
           </SearchContainer>
         </Left>
         <Center>
@@ -81,11 +86,11 @@ const Navbar = () => {
           <MenuItems>REGISTER</MenuItems>
           <MenuItems>SIGN-IN</MenuItems>
           <Link to="/cart">
-          <MenuItems>
-            <Badge badgeContent={quantity} color="primary">
-              <ShoppingCartOutlined />
-            </Badge>
-          </MenuItems>
+            <MenuItems>
+              <Badge badgeContent={quantity} color="primary">
+                <ShoppingCartOutlined />
+              </Badge>
+            </MenuItems>
           </Link>
         </Right>
       </Wrapper>

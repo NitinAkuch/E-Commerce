@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 const OfferAnnounce = styled.div`
   background-color: #cde7f7;

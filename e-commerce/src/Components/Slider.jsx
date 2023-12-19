@@ -1,6 +1,6 @@
 import { ArrowBackOutlined, ArrowForwardOutlined } from "@mui/icons-material";
 import { mobile } from "../responsive";
-import React, { useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import { sliderItems } from "../data";
 const Container = styled.div`
@@ -79,7 +79,7 @@ const Slider = () => {
   const handleClick = (direction) => {
     if (direction === "left") {
       setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
-    } else if (direction === "right") {
+    } else {
       setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
     }
   };

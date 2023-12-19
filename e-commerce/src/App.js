@@ -3,9 +3,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect
+  Redirect,
 } from "react-router-dom";
-
 
 import ProductList from "./Pages/ProductList";
 import Register from "./Pages/Register";
@@ -15,27 +14,25 @@ import Product from "./Pages/Product";
 import Cart from "./Pages/Cart";
 
 const App = () => {
-  const user = true;
+  const user = false;
   return (
     <Router>
       <Switch>
         <Route exact path="/">
-          <Home/>
+          <Home />
         </Route>
         <Route path="/products/:category">
-          <ProductList/>
+          <ProductList />
         </Route>
         <Route path="/cart">
-          <Cart/>
+          <Cart />
         </Route>
         <Route path="/register">
           {user ? <Redirect to="/" /> : <Register />}
         </Route>
-        <Route path="/login">
-          {user ? <Redirect to="/" /> : <Login />}
-        </Route>
+        <Route path="/login">{user ? <Redirect to="/" /> : <Login />}</Route>
         <Route path="/product/:id">
-          <Product/>
+          <Product />
         </Route>
       </Switch>
     </Router>
