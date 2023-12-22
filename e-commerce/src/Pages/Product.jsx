@@ -6,7 +6,7 @@ import Newsletter from "../Components/Newsletter";
 import { mobile } from "../responsive";
 //import { AddCircle, RemoveCircle } from "@mui/icons-material";
 import { useLocation } from "react-router";
-import { useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import { publicRequest } from "../requestMethods";
 import { addProduct } from "../redux/cartRedux";
 import { useDispatch } from "react-redux";
@@ -147,9 +147,7 @@ const Product = () => {
   };
 
   const handleClick = () => {
-    dispatch(
-      addProduct({ ...product, quantity, color, size })
-    );
+    dispatch(addProduct({ ...product, quantity, color, size }));
   };
   return (
     <Container>
@@ -157,12 +155,12 @@ const Product = () => {
       <Announcement />
       <Wrapper>
         <ImgContainer>
-        <Image src={product.img} />
+          <Image src={product.img} />
         </ImgContainer>
         <InfoContainer>
-        <Title>{product.title}</Title>
+          <Title>{product.title}</Title>
           <Desc>{product.desc}</Desc>
-          <Price>$ {product.price}</Price>
+          <Price> ₹ {product.price}</Price>
           <FilterContainer>
             <Filter>
               <FilterTitle>Color</FilterTitle>
@@ -180,7 +178,7 @@ const Product = () => {
             </Filter>
           </FilterContainer>
           <AddContainer>
-          <AmountContainer>
+            <AmountContainer>
               <Remove onClick={() => handleQuantity("dec")} />
               <Amount>{quantity}</Amount>
               <Add onClick={() => handleQuantity("inc")} />

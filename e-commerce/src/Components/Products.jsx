@@ -29,6 +29,7 @@ const Products = ({ cat, filters, sort }) => {
         setProducts(resp.data);
       } catch (error) {
         console.log(error);
+        console.log("Products not getting");
       }
     };
     getProducts();
