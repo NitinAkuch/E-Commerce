@@ -18,6 +18,7 @@ mongoose
     console.log("DB (NitinDB) Connection Successfull.!");
   })
   .catch((err) => {
+    console.log("DB Connection Failure");
     console.log(err);
   });
 
@@ -25,8 +26,8 @@ app.use(express.json());
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/cart", cartRoute);
-app.use("api/order", orderRoute);
-app.use("api/products", productRoute);
+app.use("/api/order", orderRoute);
+app.use("/api/products", productRoute);
 
 app.listen(process.env.PORT || 5000, () => {
   console.log("Backend is running on Port 5000.");
