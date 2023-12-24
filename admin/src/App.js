@@ -1,10 +1,10 @@
 import "./App.css";
-import Sidebar from "./components/Sidebar";
+import User from "./pages/User";
 
 function App() {
   return (
     <>
-      <Sidebar />
+      <User />
     </>
   );
 }
