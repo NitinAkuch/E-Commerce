@@ -4,7 +4,7 @@ import WidgetSm from "../components/WidgetSm";
 import WidgetLg from "../components/WidgetLg";
 import styled from "styled-components";
 import { useEffect, useMemo, useState } from "react";
-import { userRequest } from "../../requestMethods";
+import { userRequest } from "../requestMethods";
 
 const Container = styled.div`
   flex: 4;

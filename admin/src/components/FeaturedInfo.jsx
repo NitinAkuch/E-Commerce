@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { useEffect, useState } from "react";
-import { userRequest } from "../../requestMethods";
+import { userRequest } from "../requestMethods";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 

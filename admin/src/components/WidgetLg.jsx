@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { format } from "timeago.js";
-import { userRequest } from "../../requestMethods";
+import { userRequest } from "../requestMethods";
 
 const WidgetLgContainer = styled.div`
   flex: 2;

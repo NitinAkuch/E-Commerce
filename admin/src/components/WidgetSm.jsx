@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import VisibilityIcon from "@mui/icons-material/Visibility";
-import { userRequest } from "../../requestMethods";
+import { userRequest } from "../requestMethods";
 
 const WidgetSmContainer = styled.div`
   flex: 1;

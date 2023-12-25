@@ -4,7 +4,7 @@ import Chart from "../components/Chart";
 import { Publish } from "@mui/icons-material";
 import { useSelector } from "react-redux";
 import { useEffect, useMemo, useState } from "react";
-import { userRequest } from "../../requestMethods";
+import { userRequest } from "../requestMethods";
 
 export default function Product() {
   const location = useLocation();

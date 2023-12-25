@@ -1,16 +1,15 @@
-import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Sidebar from "./components/Sidebar";
-import Topbar from "./components Topbar";
+import Topbar from "./components/Topbar";
 import Home from "./pages/Home";
 import User from "./pages/User";
 import NewUser from "./pages/NewUser";
-import UserList from "./pages/UserList ";
+import UserList from "./pages/UserList";
 import ProductList from "./pages/ProductList";
 import NewProduct from "./pages/NewProduct";
-import Login from "./pages/Login ";
-import Product from "./pages/Product ";
+import Login from "./pages/Login";
+import Product from "./pages/Product";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 
@@ -23,7 +22,7 @@ function App() {
   const admin = useSelector((state) => state.user.currentUser.isAdmin);
   return (
     <Router>
-      <Switch>
+      <Routes>
         <Route path="/login">
           <Login />
         </Route>
@@ -56,7 +55,7 @@ function App() {
             </Container>
           </>
         )}
-      </Switch>
+      </Routes>
     </Router>
   );
 }
