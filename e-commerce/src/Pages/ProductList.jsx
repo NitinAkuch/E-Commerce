@@ -78,11 +78,9 @@ const ProductList = () => {
             <Option disabled selected>
               Size
             </Option>
-            <Option>XS</Option>
-            <Option>S</Option>
-            <Option>M</Option>
-            <Option>L</Option>
-            <Option>XL</Option>
+            <Option>Small</Option>
+            <Option>Medium</Option>
+            <Option>Large</Option>
           </Select>
         </Filter>
         <Filter>

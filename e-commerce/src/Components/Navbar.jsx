@@ -80,11 +80,20 @@ const Navbar = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Angello>Angello.</Angello>
+          <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+            <Angello>Angello.</Angello>
+          </Link>
         </Center>
         <Right>
-          <MenuItems>REGISTER</MenuItems>
-          <MenuItems>SIGN-IN</MenuItems>
+          <Link
+            to="/register"
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            <MenuItems>REGISTER</MenuItems>
+          </Link>
+          <Link to="/login" style={{ textDecoration: "none", color: "black" }}>
+            <MenuItems>SIGN-IN</MenuItems>
+          </Link>
           <Link to="/cart">
             <MenuItems>
               <Badge badgeContent={quantity} color="primary">

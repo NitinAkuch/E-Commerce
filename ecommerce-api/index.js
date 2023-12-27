@@ -6,12 +6,13 @@ const userRoute = require("./routes/user");
 const authRoute = require("./routes/auth");
 const cartRoute = require("./routes/cart");
 const productRoute = require("./routes/product");
-const orderRoute = require("./models/Order");
+const orderRoute = require("./routes/order");
 var cors = require("cors");
 dotenv.config();
 
 app.use(cors());
 
+app.use(express.json());
 mongoose
   .connect(process.env.MONGO_URL)
   .then(() => {
@@ -22,7 +23,6 @@ mongoose
     console.log(err);
   });
 
-app.use(express.json());
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/cart", cartRoute);

@@ -36,6 +36,9 @@ const Input = styled.input`
   border: none;
   flex: 8;
   padding-left: 20px;
+  :focus {
+    outline: none;
+  }
 `;
 
 const Button = styled.button`
@@ -43,6 +46,7 @@ const Button = styled.button`
   border: none;
   background-color: teal;
   color: white;
+  cursor: pointer;
 `;
 
 const Newsletter = () => {

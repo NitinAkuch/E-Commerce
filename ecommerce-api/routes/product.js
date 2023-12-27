@@ -7,7 +7,7 @@ const {
 } = require("./verifyToken");
 
 //CREATE
-
+//
 router.post("/", verifyTokenandAdmin, async (req, resp) => {
   const newProduct = new Product(req.body);
 
@@ -59,7 +59,7 @@ router.get("/", async (req, res) => {
   const qNew = req.query.new;
   const qCategory = req.query.category;
   try {
-    let products;
+    let products = [];
 
     if (qNew) {
       products = await Product.find().sort({ createdAt: -1 }).limit(1);
@@ -70,6 +70,7 @@ router.get("/", async (req, res) => {
         },
       });
     } else {
+      console.log("Products fetching from DB.");
       products = await Product.find();
     }
 

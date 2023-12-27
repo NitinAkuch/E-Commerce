@@ -7,10 +7,13 @@ const {
 } = require("./verifyToken");
 
 //CREATE
+
+//
 router.post("/", verifyToken, async (req, res) => {
   const newOrder = new Order(req.body);
 
   try {
+    console.log("Order creating"); //==>only for testing
     const savedOrder = await newOrder.save();
     res.status(200).json(savedOrder);
   } catch (err) {

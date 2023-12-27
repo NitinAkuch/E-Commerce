@@ -20,43 +20,37 @@ const Container = styled.div`
 
 function App() {
   const admin = useSelector((state) => state.user.currentUser.isAdmin);
+  // const admin = true;
   return (
-    <Router>
-      <Routes>
-        <Route path="/login">
-          <Login />
-        </Route>
-        {admin && (
-          <>
-            <Topbar />
-            <Container>
-              <Sidebar />
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route path="/users">
-                <UserList />
-              </Route>
-              <Route path="/user/:userId">
-                <User />
-              </Route>
-              <Route path="/newUser">
-                <NewUser />
-              </Route>
-              <Route path="/products">
-                <ProductList />
-              </Route>
-              <Route path="/product/:productId">
-                <Product />
-              </Route>
-              <Route path="/newproduct">
-                <NewProduct />
-              </Route>
-            </Container>
-          </>
-        )}
-      </Routes>
-    </Router>
+    <Container>
+      <Router>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+
+          {admin && (
+            <>
+              <Route element={<Topbar />} />
+
+              <Route element={<Sidebar />} />
+
+              <Route path="/" element={<Home />} />
+
+              <Route path="/users" element={<UserList />} />
+
+              <Route path="/user/:userId" element={<User />} />
+
+              <Route path="/newUser" element={<NewUser />} />
+
+              <Route path="/products" element={<ProductList />} />
+
+              <Route path="/product/:productId" element={<Product />} />
+
+              <Route path="/newproduct" element={<NewProduct />} />
+            </>
+          )}
+        </Routes>
+      </Router>
+    </Container>
   );
 }
 

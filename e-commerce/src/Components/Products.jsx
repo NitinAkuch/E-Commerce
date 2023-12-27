@@ -17,19 +17,33 @@ const Products = ({ cat, filters, sort }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
+  // useEffect(() => {
+  //   const getProducts = async () => {
+  //     try {
+  //       const resp = await axios.get("http://localhost:5000/api/products");
+  //       setProducts(resp.data);
+  //       console.log("Products fetching...");
+  //       console.log(resp.data);
+  //     } catch (error) {
+  //       console.log(error);
+  //       console.log("Products not getting");
+  //     }
+  //   };
+  //   getProducts();
+  // }, []);
+
   ////
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const resp = await axios.get(
+        const res = await axios.get(
           cat
             ? `http://localhost:5000/api/products?category=${cat}`
             : "http://localhost:5000/api/products"
         );
-        setProducts(resp.data);
-      } catch (error) {
-        console.log(error);
-        console.log("Products not getting");
+        setProducts(res.data);
+      } catch (err) {
+        console.log(err);
       }
     };
     getProducts();
@@ -67,10 +81,8 @@ const Products = ({ cat, filters, sort }) => {
   return (
     <Container>
       {cat
-        ? filteredProducts.map((item) => <Product item={item} key={item.id} />)
-        : products
-            .slice(0, 8)
-            .map((item) => <Product item={item} key={item.id} />)}
+        ? filteredProducts.map((item) => <Product item={item} key={item._id} />)
+        : products.map((item) => <Product item={item} key={item._id} />)}
     </Container>
   );
 };
