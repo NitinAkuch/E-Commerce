@@ -3,6 +3,7 @@ import { mobile } from "../responsive";
 import { useState } from "react";
 import { login } from "../redux/apiCalls";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
@@ -59,7 +60,8 @@ const Button = styled.button`
 const Error = styled.span`
   color: red;
 `;
-const Link = styled.a`
+
+const StyledLink = styled(Link)`
   margin: 5px 0px;
   font-size: 12px;
   text-decoration: underline;
@@ -94,8 +96,10 @@ const Login = () => {
             LOGIN
           </Button>
           {error && <Error>Something went wrong...</Error>}
-          <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
-          <Link>CREATE A NEW ACCOUNT</Link>
+          <StyledLink to="/register">
+            DO NOT YOU REMEMBER THE PASSWORD?
+          </StyledLink>
+          <StyledLink to="/register">CREATE A NEW ACCOUNT</StyledLink>
         </Form>
       </Wrapper>
     </Container>

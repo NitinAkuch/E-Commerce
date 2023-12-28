@@ -5,6 +5,8 @@ import { Badge } from "@mui/material";
 import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { logout } from "../redux/apiCalls";
+import { useDispatch } from "react-redux";
 
 const Container = styled.div`
   height: 60px;
@@ -68,6 +70,13 @@ const Navbar = () => {
   //const cart = useSelector(state=>state.cart.quantity)
   //console.log(cart)
   const quantity = useSelector((state) => state.cart.quantity);
+  const user = useSelector((state) => state.user.currentUser);
+  // const user = false;
+  const dispatch = useDispatch();
+  const handleClick = (e) => {
+    e.preventDefault();
+    logout(dispatch);
+  };
   return (
     <Container>
       <Wrapper>
@@ -85,22 +94,33 @@ const Navbar = () => {
           </Link>
         </Center>
         <Right>
-          <Link
-            to="/register"
-            style={{ textDecoration: "none", color: "black" }}
-          >
-            <MenuItems>REGISTER</MenuItems>
-          </Link>
-          <Link to="/login" style={{ textDecoration: "none", color: "black" }}>
-            <MenuItems>SIGN-IN</MenuItems>
-          </Link>
-          <Link to="/cart">
-            <MenuItems>
-              <Badge badgeContent={quantity} color="primary">
-                <ShoppingCartOutlined />
-              </Badge>
-            </MenuItems>
-          </Link>
+          {user ? (
+            <>
+              <Link
+                to="/register"
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                <MenuItems>REGISTER</MenuItems>
+              </Link>
+              <MenuItems onClick={handleClick}>LOGOUT</MenuItems>
+              <Link to="/cart">
+                <MenuItems>
+                  <Badge badgeContent={quantity} color="primary">
+                    <ShoppingCartOutlined />
+                  </Badge>
+                </MenuItems>
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link
+                to="/login"
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                <MenuItems>SIGN-IN</MenuItems>
+              </Link>
+            </>
+          )}
         </Right>
       </Wrapper>
     </Container>
