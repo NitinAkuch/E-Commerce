@@ -29,10 +29,6 @@ function App() {
 
           {admin && (
             <>
-              <Route element={<Topbar />} />
-
-              <Route element={<Sidebar />} />
-
               <Route path="/" element={<Home />} />
 
               <Route path="/users" element={<UserList />} />

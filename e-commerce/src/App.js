@@ -16,17 +16,17 @@ import Success from "./Pages/Success";
 import { useSelector } from "react-redux";
 
 const App = () => {
-  const user = useSelector((state) => state.user.currentUser);
-
   // const user = false;
+
+  const user = useSelector((state) => state.user.currentUser);
   return (
     <Router>
       <Routes>
         <Route path="/register" element={<Register />} />
+
+        <Route path="/login" element={<Login />} />
         {!user ? (
           <>
-            <Route path="/login" element={<Login />} />
-
             <Route index element={<Navigate to="/login" replace={true} />} />
           </>
         ) : (
@@ -35,17 +35,47 @@ const App = () => {
 
             <Route index element={<Navigate to="/home" replace={true} />} />
 
-            <Route path="/products/:category" element={<ProductList />} />
+            <Route
+              path="/products/:category"
+              element={
+                user ? (
+                  <Navigate to={<ProductList />} />
+                ) : (
+                  <Navigate to={<Login />} />
+                )
+              }
+            />
 
-            <Route path="/cart" element={<Cart />} />
+            <Route
+              path="/cart"
+              element={
+                user ? <Navigate to={<Cart />} /> : <Navigate to={<Login />} />
+              }
+            />
 
-            <Route path="/success" element={<Success />} />
+            <Route
+              path="/success"
+              element={
+                user ? (
+                  <Navigate to={<Success />} />
+                ) : (
+                  <Navigate to={<Login />} />
+                )
+              }
+            />
 
-            <Route path="/product/:id" element={<Product />} />
+            <Route
+              path="/product/:id"
+              element={
+                user ? (
+                  <Navigate to={<Product />} />
+                ) : (
+                  <Navigate to={<Login />} />
+                )
+              }
+            />
           </>
         )}
-
-        {/* <Route path="/login">{user ? <Redirect to="/" /> : <Login />}</Route> */}
       </Routes>
     </Router>
   );

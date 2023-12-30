@@ -76,6 +76,7 @@ const Navbar = () => {
   const handleClick = (e) => {
     e.preventDefault();
     logout(dispatch);
+    window.location.href = "/login";
   };
   return (
     <Container>
