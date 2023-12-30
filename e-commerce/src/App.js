@@ -35,45 +35,13 @@ const App = () => {
 
             <Route index element={<Navigate to="/home" replace={true} />} />
 
-            <Route
-              path="/products/:category"
-              element={
-                user ? (
-                  <Navigate to={<ProductList />} />
-                ) : (
-                  <Navigate to={<Login />} />
-                )
-              }
-            />
+            <Route path="/products/:category" element={<ProductList />} />
 
-            <Route
-              path="/cart"
-              element={
-                user ? <Navigate to={<Cart />} /> : <Navigate to={<Login />} />
-              }
-            />
+            <Route path="/cart" element={<Cart />} />
 
-            <Route
-              path="/success"
-              element={
-                user ? (
-                  <Navigate to={<Success />} />
-                ) : (
-                  <Navigate to={<Login />} />
-                )
-              }
-            />
+            <Route path="/success" element={<Success />} />
 
-            <Route
-              path="/product/:id"
-              element={
-                user ? (
-                  <Navigate to={<Product />} />
-                ) : (
-                  <Navigate to={<Login />} />
-                )
-              }
-            />
+            <Route path="/product/:id" element={<Product />} />
           </>
         )}
       </Routes>
