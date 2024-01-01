@@ -33,7 +33,8 @@ const Button = styled.button`
   border-radius: 10px;
   background-color: #fce9e3;
   border: none;
-  color: #100d0d;
+  color: #000000;
+  font-weight: 600;
   text-align: center;
   font-size: 14px;
   padding: 10px;
@@ -45,9 +46,10 @@ const Button = styled.button`
 
   :hover {
     width: 120px;
-    background-color: #c1f483;
+    background-color: #b3f562;
     color: #030000;
     opacity: 1;
+    border: 2px solid white;
   }
 `;
 const CategoryItem = ({ item }) => {

@@ -67,6 +67,8 @@ const Desc = styled.p`
   letter-spacing: 1.5px;
 `;
 const Button = styled.button`
+  margin-top: 25px;
+  margin-left: 50px;
   padding: 15px 25px;
   font-size: 24px;
   text-align: center;

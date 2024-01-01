@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { mobile } from "../responsive";
+
 import {
   Facebook,
   Instagram,
@@ -94,18 +95,26 @@ const Footer = () => {
           humour, or randomised words which don’t look even slightly believable.
         </Desc>
         <SocialContainer>
-          <SocialIcon color="3B5999">
-            <Facebook />
-          </SocialIcon>
-          <SocialIcon color="E4405F">
-            <Instagram />
-          </SocialIcon>
-          <SocialIcon color="55ACEE">
-            <Twitter />
-          </SocialIcon>
-          <SocialIcon color="E60023">
-            <Pinterest />
-          </SocialIcon>
+          <a href="https://twitter.com/AkNitin3" rel="noopener noreferrer">
+            <SocialIcon color="3B5999">
+              <Facebook />
+            </SocialIcon>
+          </a>
+          <a href="https://twitter.com/AkNitin3" rel="noopener noreferrer">
+            <SocialIcon color="E4405F">
+              <Instagram />
+            </SocialIcon>
+          </a>
+          <a href="https://twitter.com/AkNitin3" rel="noopener noreferrer">
+            <SocialIcon color="55ACEE">
+              <Twitter />
+            </SocialIcon>
+          </a>
+          <a href="https://twitter.com/AkNitin3" rel="noopener noreferrer">
+            <SocialIcon color="E60023">
+              <Pinterest />
+            </SocialIcon>
+          </a>
         </SocialContainer>
       </Left>
       <Center>
