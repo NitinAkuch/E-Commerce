@@ -3,22 +3,29 @@ export const sliderItems = [
     id: 0,
     img: "https://i.ibb.co/9344jv4/3.png",
     title: "SUMMER SALE!",
-    desc: "Don't Compromise on Style! Get Flat 30% Off For New Arrivals.",
+    desc: "Heat up your savings with our scorching summer sale! Dive into cool discounts on everything you need for a sizzling season of fun under the sun.",
     bg: "f9e9e9",
   },
   {
     id: 1,
     img: "https://i.ibb.co/QHjGfdX/2.png",
     title: "WINTER SALE!",
-    desc: "Don't Compromise on Style! Get Flat 30% Off For New Arrivals.",
+    desc: "Embrace the chill with hot deals! Find your winter essentials at irresistible prices, ensuring you stay cozy and stylish throughout the season.",
     bg: "dcf5f9",
   },
   {
     id: 2,
-    img: "https://i.ibb.co/9344jv4/3.png",
+    img: "https://i.ibb.co/MkfHnxN/young-boy-going-for-world-tour.png",
     title: "POPOULAR SALE!",
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.Ut libero excepturi deleniti enim quae soluta vel, et quasi officiis    natus totam. Veritatis perferendis qui nesciunt quam doloremque    nulla libero porro? ",
+    desc: "Join the trendsetters! Explore our popular sale featuring must-have items loved by everyone. Grab these favorites at amazing prices before they're gone! ",
     bg: "ebe1fc",
+  },
+  {
+    id: 3,
+    img: "https://i.ibb.co/JkNGLbG/diwali-celebration.png",
+    title: "DIWALI SALE!",
+    desc: "Illuminate your festivities with our Diwali Sale! Discover a treasure trove of discounts and celebrate the festival of lights with joy, prosperity, and incredible savings on top-notch products.",
+    bg: "A0E7E5",
   },
 ];
 export const categories = [

@@ -30,17 +30,24 @@ const Title = styled.h1`
   margin: 10px;
 `;
 const Button = styled.button`
-  padding: 5px;
+  border-radius: 10px;
+  background-color: #fce9e3;
   border: none;
-  background-color: white;
-  border-radius: 3px;
-  font-weight: 500;
+  color: #100d0d;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
   cursor: pointer;
-  &:hover {
-    background-color: #50f62f;
-    color: white;
-    width: 100px;
-    height: 40px;
+  margin: 5px;
+  opacity: 0.7;
+
+  :hover {
+    width: 120px;
+    background-color: #c1f483;
+    color: #030000;
+    opacity: 1;
   }
 `;
 const CategoryItem = ({ item }) => {
@@ -50,7 +57,9 @@ const CategoryItem = ({ item }) => {
         <Image src={item.img} />
         <Info>
           <Title>{item.title}</Title>
-          <Button>Shop Now!</Button>
+          <Button>
+            <span>ShopNow</span>
+          </Button>
         </Info>
       </Link>
     </Container>

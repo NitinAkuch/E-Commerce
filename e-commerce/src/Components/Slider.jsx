@@ -67,20 +67,35 @@ const Desc = styled.p`
   letter-spacing: 1.5px;
 `;
 const Button = styled.button`
-  padding: 5px;
-  margin-left: 10px;
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
   cursor: pointer;
-  background-color: transparent;
-  border: solid 1px gray;
+  outline: none;
+  color: #fff;
+  background-color: #04aa6d;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+
+  :hover {
+    background-color: #3e8e41;
+  }
+
+  :active {
+    background-color: #f6828c;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
 `;
 
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(0);
   const handleClick = (direction) => {
     if (direction === "left") {
-      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
+      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 3);
     } else {
-      setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
+      setSlideIndex(slideIndex < 3 ? slideIndex + 1 : 0);
     }
   };
 
