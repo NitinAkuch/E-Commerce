@@ -9,6 +9,7 @@ import StripeCheckout from "react-stripe-checkout";
 import { useEffect, useState } from "react";
 import { userRequest } from "../requestMethods";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 const Container = styled.div``;
 
@@ -157,6 +158,24 @@ const Button = styled.button`
   font-weight: 600;
 `;
 
+const AddQuantity = styled(Add)`
+  border-radius: 50%;
+  margin: 15px;
+  :hover {
+    background-color: #bcb7b7;
+    cursor: pointer;
+  }
+`;
+
+const ReduceQuantity = styled(Remove)`
+  border-radius: 50%;
+  margin: 15px;
+  :hover {
+    cursor: pointer;
+    background-color: #bcb7b7;
+  }
+`;
+
 const KEY = process.env.REACT_APP_STRIPE;
 
 const Cart = () => {
@@ -194,17 +213,30 @@ const Cart = () => {
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
-          <TopButton>CONTINUE SHOPPING</TopButton>
+          <Link to="/">
+            <TopButton>CONTINUE SHOPPING</TopButton>
+          </Link>
           <TopTexts>
             <TopText>Shopping Bag(2)</TopText>
             <TopText>Your Wishlist (0)</TopText>
           </TopTexts>
-          <TopButton type="filled">CHECKOUT NOW</TopButton>
+          {/* <TopButton type="filled">CHECKOUT NOW</TopButton> */}
+          <StripeCheckout
+            name="AngelloShop"
+            billingAddress
+            shippingAddress
+            description={`Your Total is ₹ ${cart.total}`}
+            amount={cart.total * 100}
+            token={onToken}
+            stripeKey={KEY}
+          >
+            <Button>CHECKOUT NOW</Button>
+          </StripeCheckout>
         </Top>
         <Bottom>
           <Info>
             {cart.products.map((product) => (
-              <Product>
+              <Product key={product.title}>
                 <ProductDetail>
                   <Image src={product.img} />
                   <Details>
@@ -222,9 +254,9 @@ const Cart = () => {
                 </ProductDetail>
                 <PriceDetail>
                   <ProductAmountContainer>
-                    <Add />
+                    <AddQuantity />
                     <ProductAmount> {product.quantity}</ProductAmount>
-                    <Remove />
+                    <ReduceQuantity />
                   </ProductAmountContainer>
                   <ProductPrice>
                     {" "}
@@ -234,31 +266,6 @@ const Cart = () => {
               </Product>
             ))}
             <Hr />
-            {/* <Product>
-              <ProductDetail>
-                <Image src="https://i.pinimg.com/originals/2d/af/f8/2daff8e0823e51dd752704a47d5b795c.png" />
-                <Details>
-                  <ProductName>
-                    <b>Product:</b> HAKURA T-SHIRT
-                  </ProductName>
-                  <ProductId>
-                    <b>ID:</b> 93813718293
-                  </ProductId>
-                  <ProductColor color="gray" />
-                  <ProductSize>
-                    <b>Size:</b> M
-                  </ProductSize>
-                </Details>
-              </ProductDetail>
-              <PriceDetail>
-                <ProductAmountContainer>
-                  <Add />
-                  <ProductAmount>1</ProductAmount>
-                  <Remove />
-                </ProductAmountContainer>
-                <ProductPrice>$ 20</ProductPrice>
-              </PriceDetail>
-            </Product> */}
           </Info>
           <Summary>
             <SummaryTitle>ORDER SUMMARY</SummaryTitle>
@@ -298,3 +305,29 @@ const Cart = () => {
 };
 
 export default Cart;
+
+// {/* <Product>
+//               <ProductDetail>
+//                 <Image src="https://i.pinimg.com/originals/2d/af/f8/2daff8e0823e51dd752704a47d5b795c.png" />
+//                 <Details>
+//                   <ProductName>
+//                     <b>Product:</b> HAKURA T-SHIRT
+//                   </ProductName>
+//                   <ProductId>
+//                     <b>ID:</b> 93813718293
+//                   </ProductId>
+//                   <ProductColor color="gray" />
+//                   <ProductSize>
+//                     <b>Size:</b> M
+//                   </ProductSize>
+//                 </Details>
+//               </ProductDetail>
+//               <PriceDetail>
+//                 <ProductAmountContainer>
+//                   <Add />
+//                   <ProductAmount>1</ProductAmount>
+//                   <Remove />
+//                 </ProductAmountContainer>
+//                 <ProductPrice>$ 20</ProductPrice>
+//               </PriceDetail>
+//             </Product> */}

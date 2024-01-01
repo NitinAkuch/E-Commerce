@@ -14,6 +14,7 @@ export const login = async (dispatch, user) => {
   try {
     const res = await publicRequest.post("/auth/login", user);
     dispatch(loginSuccess(res.data));
+    window.location.href = "/home";
   } catch (err) {
     console.log(err);
     dispatch(loginFailure());
@@ -23,6 +24,7 @@ export const login = async (dispatch, user) => {
 export const logout = (dispatch) => {
   try {
     dispatch(logoutSuccess());
+    window.location.href = "/login";
   } catch (error) {
     console.log(error.message);
   }

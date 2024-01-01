@@ -4,7 +4,6 @@ import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 import Newsletter from "../Components/Newsletter";
 import { mobile } from "../responsive";
-//import { AddCircle, RemoveCircle } from "@mui/icons-material";
 import { useLocation } from "react-router";
 import { useEffect, useState } from "react";
 import { publicRequest } from "../requestMethods";
