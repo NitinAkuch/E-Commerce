@@ -7,6 +7,7 @@ const Container = styled.div`
   margin: 3px;
   height: 70vh;
   position: relative;
+  min-width: 450px;
 `;
 const Image = styled.img`
   width: 100%;
@@ -44,12 +45,13 @@ const Button = styled.button`
   margin: 5px;
   opacity: 0.7;
 
-  :hover {
+  &:hover {
     width: 120px;
-    background-color: #b3f562;
+    background-color: #f3f9eb;
     color: #030000;
     opacity: 1;
-    border: 2px solid white;
+    border: 1px solid white;
+    box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
   }
 `;
 const CategoryItem = ({ item }) => {

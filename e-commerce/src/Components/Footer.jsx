@@ -90,9 +90,10 @@ const Footer = () => {
       <Left>
         <Logo>NitinAkuch.</Logo>
         <Desc>
-          There are many variations of passages of Lorem Ipsum available, but
-          the majority have suffered alteration in some form, by injected
-          humour, or randomised words which don’t look even slightly believable.
+          Crafted with passion in ReactJS, this e-commerce project embodies my
+          dedication to seamless user experiences and robust, innovative web
+          development practices, aiming to redefine online shopping with
+          efficiency and elegance.
         </Desc>
         <SocialContainer>
           <a href="https://twitter.com/AkNitin3" rel="noopener noreferrer">
@@ -122,8 +123,8 @@ const Footer = () => {
         <List>
           <ListItem>Home</ListItem>
           <ListItem>Cart</ListItem>
-          <ListItem>Man Fashion</ListItem>
-          <ListItem>Woman Fashion</ListItem>
+          <ListItem>Men Fashions</ListItem>
+          <ListItem>Women Fashions</ListItem>
           <ListItem>Accessories</ListItem>
           <ListItem>My Account</ListItem>
           <ListItem>Order Tracking</ListItem>

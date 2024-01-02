@@ -39,13 +39,31 @@ export const categories = [
     id: 2,
     img: "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     title: "LOUNGEWEAR LOVE",
-    cat: "coat",
+    cat: "loungewear",
   },
   {
     id: 3,
     img: "https://images.pexels.com/photos/5480696/pexels-photo-5480696.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     title: "LIGHT JACKETS",
     cat: "personal",
+  },
+  {
+    id: 4,
+    img: "https://img.freepik.com/free-photo/close-up-photo-young-successful-business-man-black-suit_171337-9509.jpg?w=1060&t=st=1704165372~exp=1704165972~hmac=d0a9721e7cc94892ec0471e334c80b16467b64febba7a3ae1b0499ddae4d1e81",
+    title: "Black Suits",
+    cat: "suit",
+  },
+  {
+    id: 5,
+    img: "https://img.freepik.com/free-photo/portrait-indian-woman-with-flag_23-2150913220.jpg?t=st=1704164649~exp=1704168249~hmac=c3bafbb9c46e50723898628198b9ad5d8a64f68def3d463a5702005990d739a9&w=740",
+    title: "Saree",
+    cat: "saree",
+  },
+  {
+    id: 6,
+    img: "https://img.freepik.com/free-photo/full-length-portrait-cute-little-girl-hat_171337-13768.jpg?w=360&t=st=1704165488~exp=1704166088~hmac=c0b77a32a03f3c289d9b209715c2dd714b0e07eca641f7de3a998366cc9695ff",
+    title: "Kids",
+    cat: "kids",
   },
 ];
 

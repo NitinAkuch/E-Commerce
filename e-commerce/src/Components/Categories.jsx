@@ -5,10 +5,12 @@ import { categories } from "../data";
 import { mobile } from "../responsive";
 
 const Container = styled.div`
-  display: flex;
   padding: 3px;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+
   ${mobile({ padding: "0px", flexDirection: "column" })}
 `;
 
