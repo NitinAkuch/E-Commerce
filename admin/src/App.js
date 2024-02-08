@@ -19,8 +19,8 @@ const Container = styled.div`
 `;
 
 function App() {
-  // const admin = useSelector((state) => state.user.currentUser.isAdmin);
-  const admin = true;
+  const admin = useSelector((state) => state.user.currentUser.isAdmin);
+  // const admin = true;
   return (
     <Container>
       <Router>
