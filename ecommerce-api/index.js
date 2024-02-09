@@ -16,7 +16,7 @@ app.use(express.json());
 mongoose
   .connect(process.env.MONGO_URL)
   .then(() => {
-    console.log("DB (NitinDB) Connection Successfull.!");
+    console.log("DB (NitinDB) Connection Successfull.! == MongoDB Connection");
   })
   .catch((err) => {
     console.log("DB Connection Failure");
