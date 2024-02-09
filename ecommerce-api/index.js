@@ -7,6 +7,8 @@ const authRoute = require("./routes/auth");
 const cartRoute = require("./routes/cart");
 const productRoute = require("./routes/product");
 const orderRoute = require("./routes/order");
+const stripeRoute = require("./routes/stripe");
+
 var cors = require("cors");
 dotenv.config();
 
@@ -28,6 +30,7 @@ app.use("/api/auth", authRoute);
 app.use("/api/cart", cartRoute);
 app.use("/api/orders", orderRoute);
 app.use("/api/products", productRoute);
+app.use("/api/checkout", stripeRoute);
 
 app.listen(process.env.PORT || 5000, () => {
   console.log("Backend is running on Port 5000.");
