@@ -28,8 +28,8 @@ const Success = () => {
       } catch (error) {
         console.log(error);
       }
-      data && createOrder();
     };
+    data && createOrder();
   }, [cart, data, currentUser]);
 
   return (
