@@ -210,7 +210,7 @@ const Cart = () => {
     const headers = {
       "Content-Type": "application/json",
     };
-    const response = await fetch("http://localhost:5000/api/checkout/payment", {
+    const response = await fetch("https://e-commerce-0k5w.onrender.com/api/checkout/payment", {
       method: "POST",
       headers: headers,
       body: JSON.stringify(body),
