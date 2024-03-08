@@ -201,9 +201,7 @@ const Cart = () => {
   // }, [stripeToken, cart, cart.total, navigate]);
 
   const handlePayment = async () => {
-    const stripe = await loadStripe(
-      process.env.REACT_STRIPE_KEY
-    );
+    const stripe = await loadStripe("pk_test_51NJvigSEAYPn3rVBblL2xpDhTzkpajLevdUnkSfgC8rm1YHrIlm0JfUSmOrsMr4NXKwulSioy3ibWkUft8TxriAq0064JpYdDI");
     const body = {
       productsCarted: cart,
     };
