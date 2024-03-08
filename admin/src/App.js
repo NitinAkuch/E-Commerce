@@ -1,7 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import Sidebar from "./components/Sidebar";
-import Topbar from "./components/Topbar";
 import Home from "./pages/Home";
 import User from "./pages/User";
 import NewUser from "./pages/NewUser";
@@ -26,11 +24,10 @@ function App() {
       <Router>
         <Routes>
           <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Home />} />
 
           {admin && (
             <>
-              <Route path="/" element={<Home />} />
-
               <Route path="/users" element={<UserList />} />
 
               <Route path="/user/:userId" element={<User />} />

@@ -1,21 +1,22 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../redux/apiCalls";
-
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
-
+  // const navigate = useNavigate();
+  // const { currentUser } = useSelector((state) => state.user);
   const handleClick = (e) => {
     e.preventDefault();
     login(dispatch, { username, password });
-  };
-
+   
+  }
   return (
     <div
       style={{
         height: "100vh",
+        width: "100vw",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
