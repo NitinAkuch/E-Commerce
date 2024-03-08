@@ -35,6 +35,7 @@ export const registration = async (dispatch, user) => {
   try {
     const res = await publicRequest.post("/auth/register", user);
     dispatch(registrationSuccess(res.data));
+    window.location.href = "/login";
   } catch (err) {
     dispatch(registrationFailure());
   }

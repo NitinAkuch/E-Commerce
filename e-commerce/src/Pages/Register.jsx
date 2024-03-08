@@ -68,7 +68,7 @@ const Register = () => {
   const handleClick = (e) => {
     e.preventDefault();
     registration(dispatch, { name, lastname, username, email, password });
-    window.location.href = "/login";
+    // window.location.href = "/login";
   };
 
   return (
